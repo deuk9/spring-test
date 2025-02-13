@@ -1,0 +1,9 @@
+CREATE SEQUENCE IF NOT EXISTS coffee_seq START WITH 1 INCREMENT BY 50;
+
+CREATE TABLE coffee
+(
+    id    BIGINT NOT NULL,
+    name  VARCHAR(255),
+    price INTEGER,
+    CONSTRAINT pk_coffee PRIMARY KEY (id)
+);

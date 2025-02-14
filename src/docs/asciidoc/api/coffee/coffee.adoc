@@ -1,0 +1,19 @@
+[[caffe-create]]
+=== 커피 등록
+
+==== HTTP Request
+include::{snippets}/coffees/create/request-body.adoc[]
+include::{snippets}/coffees/create/request-fields.adoc[]
+
+* 커피를 등록합니다.
+
+=== 커피 조회
+
+==== path 조회
+===== HTTP Request
+include::{snippets}/coffees/get-by-id/httpie-request.adoc[]
+
+===== HTTP Response
+include::{snippets}/coffees/get-by-id/response-fields.adoc[]
+include::{snippets}/coffees/get-by-id/response-body.adoc[]
+* 커피를 조회합니다.(path)

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+
+  flyway:
+    default-schema: public
+    baseline-on-migrate: true

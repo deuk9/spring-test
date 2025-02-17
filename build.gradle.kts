@@ -49,8 +49,8 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:postgresql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -70,18 +70,7 @@ tasks.test {
     useJUnitPlatform()
 }
 
-//tasks.named<org.asciidoctor.gradle.jvm.AsciidoctorTask>("asciidoctor") {
-//
-//    inputs.dir(snippetsDir)
-//    configurations("asciidoctorExt")
-//    baseDirFollowsSourceFile() // 각 asciidoc 파일의 상위 디렉토리를 기준으로 함
-//    sources { // 특정 파일만 HTML로 변환 (필요에 따라 패턴 수정)
-//        include("**/index.adoc")
-//    }
-//    dependsOn(tasks.test)
-//}
-
-tasks.asciidoctor {
+tasks.named<org.asciidoctor.gradle.jvm.AsciidoctorTask>("asciidoctor")  {
     inputs.dir(snippetsDir)
     configurations("asciidoctorExt")
     sources { // 특정 파일만 HTML로 변환 (필요에 따라 패턴 수정)
@@ -91,16 +80,9 @@ tasks.asciidoctor {
     dependsOn(tasks.test)
 }
 
-val copyDocument = tasks.register<Copy>("copyDocument") {
-    dependsOn(tasks.asciidoctor)
-    doFirst {
-        delete(file("src/main/resources/static/docs"))
+tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    dependsOn(tasks.named("asciidoctor"))
+    from("build/docs/asciidoc") {
+        into("static/docs")
     }
-    from(file("build/docs/asciidoc"))
-    into(file("src/main/resources/static/docs"))
-}
-
-
-tasks.build {
-    dependsOn(copyDocument)
 }

@@ -24,11 +24,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 class CoffeeControllerTest extends ControllerTestSupport {
 
-
-    @MockitoBean
-    private CoffeeService coffeeService;
-
-
     @Test
     @DisplayName("유효한 요청으로 커피를 생성한다")
     void create_createsCoffee_whenValidRequest() throws Exception {

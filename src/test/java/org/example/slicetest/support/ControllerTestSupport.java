@@ -1,7 +1,6 @@
-package org.example.slicetest;
+package org.example.slicetest.support;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.slicetest.coffee.RestDocConfiguration;
 import org.example.slicetest.coffee.controller.CoffeeController;
 import org.example.slicetest.coffee.service.CoffeeService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,7 @@
-package org.example.slicetest;
+package org.example.slicetest.support;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 
 @Import(TestcontainersConfiguration.class)

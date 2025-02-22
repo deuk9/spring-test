@@ -14,13 +14,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.example.slicetest.ControllerTestSupport;
-import org.example.slicetest.coffee.service.CoffeeService;
+import org.example.slicetest.support.ControllerTestSupport;
 import org.example.slicetest.coffee.service.request.CoffeeCreateRequest;
 import org.example.slicetest.coffee.service.response.CoffeeDetailResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 class CoffeeControllerTest extends ControllerTestSupport {
 

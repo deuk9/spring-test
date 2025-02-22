@@ -3,7 +3,7 @@ package org.example.slicetest.coffee.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
-import org.example.slicetest.IntegrationTestSupport;
+import org.example.slicetest.support.IntegrationTestSupport;
 import org.example.slicetest.coffee.domain.Coffee;
 import org.example.slicetest.coffee.service.request.CoffeeCreateRequest;
 import org.junit.jupiter.api.DisplayName;

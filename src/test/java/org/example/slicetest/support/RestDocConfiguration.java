@@ -1,4 +1,4 @@
-package org.example.slicetest.coffee;
+package org.example.slicetest.support;
 
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
 

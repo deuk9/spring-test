@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.NoSuchElementException;
-import org.example.slicetest.IntegrationTestSupport;
+import org.example.slicetest.support.IntegrationTestSupport;
 import org.example.slicetest.coffee.service.request.CoffeeCreateRequest;
 import org.example.slicetest.coffee.service.response.CoffeeDetailResponse;
 import org.junit.jupiter.api.DisplayName;
